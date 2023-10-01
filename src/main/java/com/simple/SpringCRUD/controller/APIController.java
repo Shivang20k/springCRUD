@@ -51,7 +51,6 @@ public class APIController {
     private ResponseEntity<Passenger> updatePassenger(@PathVariable long id, @RequestBody Passenger passenger) {
         Passenger ps =  passengerRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Passenger does not exist by ID" + id));
-        ps.setId(passenger.getId());
         ps.setMail(passenger.getMail());
         ps.setName(passenger.getName());
         ps.setPhone(passenger.getPhone());
