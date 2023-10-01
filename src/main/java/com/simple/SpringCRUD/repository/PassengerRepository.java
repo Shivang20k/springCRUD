@@ -6,5 +6,4 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface PassengerRepository extends JpaRepository<Passenger, Long> {
-    //crud//ok
 }
