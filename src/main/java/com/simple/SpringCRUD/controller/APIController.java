@@ -48,6 +48,7 @@ public class APIController {
         ps.setMail(passenger.getMail());
         ps.setName(passenger.getName());
         ps.setPhone(passenger.getPhone());
+        ps.setPassword(passenger.getPassword());
         passengerRepository.save(ps);
         return new ResponseEntity<>(ps, HttpStatus.OK);
     }
