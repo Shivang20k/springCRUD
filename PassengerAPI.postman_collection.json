@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "52bb0fbf-e8f0-402a-9cbe-5b5c91a76339",
+		"name": "PassengerAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30174449"
+	},
+	"item": [
+		{
+			"name": "Create Passenger",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"User10\",\r\n    \"phone\": \"11111\",\r\n    \"mail\": \"test10@gmail.com\",\r\n    \"password\": \"user10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/passenger"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Passengers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MTFAZ21haWwuY29tIiwiaWF0IjoxNjk2NjcxNTg5LCJleHAiOjE2OTY2ODk1ODl9.tvSH13jzLHAsDcgI4O4csAHA3zeH3Qyujke-9DHDgsZnfS5LprGtTM2rVxMsse3IbuPpBfz1HAFN_7i5Pt0VyA"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/passenger"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Passenger by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/passenger/5"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Passenger by ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"User_1\",\r\n    \"phone\": \"1234569790\",\r\n    \"mail\": \"testing@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/passenger/update/4"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Passenger By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MTFAZ21haWwuY29tIiwiaWF0IjoxNjk2NjcxNTg5LCJleHAiOjE2OTY2ODk1ODl9.tvSH13jzLHAsDcgI4O4csAHA3zeH3Qyujke-9DHDgsZnfS5LprGtTM2rVxMsse3IbuPpBfz1HAFN_7i5Pt0VyA"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/passenger/12"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"test11@gmail.com\",\r\n    \"password\" : \"user11\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Create AUTH User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"User21\",\r\n    \"phone\": \"111112\",\r\n    \"mail\": \"test20@gmail.com\",\r\n    \"password\": \"user21\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/auth/create"
+			},
+			"response": []
+		}
+	]
+}
