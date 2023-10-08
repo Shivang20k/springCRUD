@@ -35,6 +35,8 @@ public class SecurityConfig {
                                                    .permitAll()
                                                    .requestMatchers("/auth/create")
                                                    .permitAll()
+                                                   .requestMatchers("/swagger-ui/**")
+                                                   .permitAll()
                                                    .anyRequest()
                                                    .authenticated())
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(jwtAuthenticationEntryPoint))
