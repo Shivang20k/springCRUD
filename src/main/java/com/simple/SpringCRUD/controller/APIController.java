@@ -6,6 +6,7 @@ import com.simple.SpringCRUD.repository.PassengerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -37,6 +38,7 @@ public class APIController {
 
     @PostMapping("/passenger")
     private ResponseEntity<String> createPassenger(@RequestBody Passenger passenger) {
+        passenger.setPassword(new BCryptPasswordEncoder().encode(passenger.getPassword()));
          passengerRepository.save(passenger);
          return new ResponseEntity<>("Creation successfully", HttpStatus.OK);
     }
@@ -48,7 +50,7 @@ public class APIController {
         ps.setMail(passenger.getMail());
         ps.setName(passenger.getName());
         ps.setPhone(passenger.getPhone());
-        ps.setPassword(passenger.getPassword());
+        ps.setPassword(new BCryptPasswordEncoder().encode((passenger.getPassword())));
         passengerRepository.save(ps);
         return new ResponseEntity<>(ps, HttpStatus.OK);
     }

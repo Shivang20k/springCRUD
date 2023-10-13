@@ -1,5 +1,6 @@
 package com.simple.SpringCRUD.model;
 
+import com.simple.SpringCRUD.MaskingInterface.Mask;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,10 +22,12 @@ public class Passenger implements UserDetails {
     private Long id;
     @Column(name= "name")
     private String name;
+    @Mask
     @Column(name="phone")
     private String phone;
     @Column(name="mail")
     private String mail;
+    @Mask
     @Column(name="password")
     private String password;
 
