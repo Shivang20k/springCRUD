@@ -38,7 +38,7 @@ public class APIController {
 
     @PostMapping("/passenger")
     private ResponseEntity<String> createPassenger(@RequestBody Passenger passenger) {
-        passenger.setPassword(new BCryptPasswordEncoder().encode(passenger.getPassword()));
+         passenger.setPassword(new BCryptPasswordEncoder().encode(passenger.getPassword()));
          passengerRepository.save(passenger);
          return new ResponseEntity<>("Creation successfully", HttpStatus.OK);
     }
